@@ -104,7 +104,7 @@
                                                         <color key="textColor" red="0.0" green="0.69019607839999997" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minimumValue="2" maximumValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="haq-5m-pqs">
+                                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minimumValue="2" maximumValue="12" translatesAutoresizingMaskIntoConstraints="NO" id="haq-5m-pqs">
                                                         <rect key="frame" x="120" y="0.0" width="94" height="29"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="29" id="lc0-jW-BEi"/>
@@ -200,6 +200,7 @@
                     </view>
                     <connections>
                         <outlet property="billTextField" destination="wcN-ka-Q4F" id="9yz-e3-gAX"/>
+                        <outlet property="splitNumberLabel" destination="bSy-Yc-886" id="1RT-7T-qOA"/>
                         <outlet property="tenPctButton" destination="7y6-Kf-yF0" id="4g3-ry-L7q"/>
                         <outlet property="twntyPctButton" destination="UtR-dU-EKt" id="2BB-0S-T5i"/>
                         <outlet property="zeroPctButton" destination="XzR-0E-Xf7" id="ODj-QT-CF5"/>
@@ -264,6 +265,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10f"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="recalculatePressed:" destination="Dnf-m2-FPm" eventType="touchUpInside" id="BUf-Z1-tTl"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split between 2 people, with 10% tip." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGt-bn-sCv">
                                 <rect key="frame" x="50" y="305" width="314" height="117"/>
@@ -288,6 +292,10 @@
                             <constraint firstItem="ZCe-Te-efL" firstAttribute="top" secondItem="DNW-gk-FsX" secondAttribute="top" id="zdY-59-9ry"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="settingsLabel" destination="HGt-bn-sCv" id="5XT-Rx-hKh"/>
+                        <outlet property="totalLabel" destination="uLJ-ii-hft" id="p7w-c8-w1E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uLi-Eb-NGd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
