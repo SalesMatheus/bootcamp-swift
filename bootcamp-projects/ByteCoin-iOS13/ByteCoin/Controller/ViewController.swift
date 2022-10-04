@@ -5,10 +5,10 @@
 //  Created by Angela Yu on 11/09/2019.
 //  Copyright © 2019 The App Brewery. All rights reserved.
 //
+
 import UIKit
 
-//Adopt the Coin Manager Protocol
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, CoinManagerDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet weak var bitcoinLabel: UILabel!
     @IBOutlet weak var currencyLabel: UILabel!
@@ -22,9 +22,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         coinManager.delegate = self
         currencyPicker.dataSource = self
         currencyPicker.delegate = self
-        
     }
-    
+}
+
+//MARK: - CoinManagerDelegate
+extension ViewController: CoinManagerDelegate {
     
     func didUpdatePrice(price: String, currency: String) {
         
@@ -37,6 +39,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func didFailWithError(error: Error) {
         print(error)
     }
+}
+
+//MARK: - UIPickerView DataSource & Delegate
+extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
